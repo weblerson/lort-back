@@ -48,3 +48,4 @@ class DBConfig:
     @property
     def base(self):
         return self.__base
+
