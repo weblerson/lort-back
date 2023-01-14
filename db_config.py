@@ -2,6 +2,8 @@ from sqlalchemy import create_engine, Column
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+from decouple import config
+
 
 class DBConfig:
 
@@ -24,7 +26,7 @@ class DBConfig:
             self.__db = config('DB', cast=str)
             self.__port = config('DBPORT', cast=int)
 
-            self.__conn = 'postgresql://%s:%s@%s:%d/%s' /
+            self.__conn = 'postgresql://%s:%s@%s:%d/%s' \
                           % (
                             self.__user,
                             self.__password,

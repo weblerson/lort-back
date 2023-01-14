@@ -2,9 +2,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from decouple import config
 
+from decorators.singleton import singleton
+
 __all__ = ['APIConfig', 'FastAPI']
 
 
+@singleton
 class APIConfig:
 
     def __init__(self):
