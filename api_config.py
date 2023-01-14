@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from decouple import config
 
 
-class Config:
+class APIConfig:
     def __init__(self):
         self.__app: FastAPI
         if config('PROD', cast=bool):
